@@ -6,7 +6,7 @@
 # start of build and used in here should always be intialized in this file
 
 ## All essential packages
-$(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/common_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, device/nvidia/ardbeg/device.mk)
 
