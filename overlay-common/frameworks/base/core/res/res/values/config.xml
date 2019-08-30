@@ -192,7 +192,7 @@
     </string-array>
 
     <!-- Whether enable controller mapper -->
-    <bool name="config_controllerMapper">true</bool>
+    <!--bool name="config_controllerMapper">true</bool-->
 
     <!-- Allow shutdown at battery level 0% even though any charger is plugged in -->
     <add-resource type="bool" name="config_allowShutdownWithCharger"/>

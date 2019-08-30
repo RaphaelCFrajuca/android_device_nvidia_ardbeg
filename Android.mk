@@ -19,3 +19,5 @@ ifeq ($(TARGET_DEVICE),ardbeg)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
+
+endif

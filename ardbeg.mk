@@ -13,11 +13,11 @@ PRODUCT_PROPERTY_OVERRIDES += ro.com.google.clientidbase=android-nvidia \
 			      ro.product.locale.region=US
 
 ## Common packages
-$(call inherit-product-if-exists, vendor/nvidia/tegra/secureos/nvsi/nvsi.mk)
+#$(call inherit-product-if-exists, vendor/nvidia/tegra/secureos/nvsi/nvsi.mk)
 $(call inherit-product-if-exists, frameworks/base/data/videos/VideoPackage2.mk)
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage3.mk)
-$(call inherit-product-if-exists, vendor/nvidia/tegra/core/nvidia-tegra-vendor.mk)
-$(call inherit-product-if-exists, vendor/nvidia/tegra/ardbeg/partition-data/factory-ramdisk/factory.mk)
+#$(call inherit-product-if-exists, vendor/nvidia/tegra/core/nvidia-tegra-vendor.mk)
+#$(call inherit-product-if-exists, vendor/nvidia/tegra/ardbeg/partition-data/factory-ramdisk/factory.mk)
 
 include frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk
 include $(LOCAL_PATH)/touchscreen/maxim/maxim.mk
@@ -25,79 +25,6 @@ include $(LOCAL_PATH)/touchscreen/maxim/maxim.mk
 #include packages/thirdpart/third_part_apps.mk
 
 PRODUCT_LOCALES += mdpi hdpi xhdpi
-
-ifeq ($(wildcard vendor/nvidia/tegra/core-private),vendor/nvidia/tegra/core-private)
-    NVFLASH_FILES_PATH := vendor/nvidia/tegra/bootloader/nvbootloader/odm-partner/ardbeg
-else
-    NVFLASH_FILES_PATH := vendor/nvidia/tegra/odm/ardbeg
-endif
-
-PRODUCT_COPY_FILES += \
-    $(NVFLASH_FILES_PATH)/nvflash/PM358_Hynix_2GB_H5TC4G63AFR_RDA_792MHz.cfg:flash_pm358_792.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/PM359_Hynix_2GB_H5TC4G63AFR_RDA_792MHz.cfg:flash_pm359_792.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1780_Hynix_2GB_H5TC4G63AFR_RDA_408Mhz.cfg:flash_e1780_408.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1780_Hynix_2GB_H5TC4G63AFR_RDA_792Mhz.cfg:flash_e1780_792.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1780_Hynix_4GB_H5TC8G63AMR_PBA_792Mhz.cfg:flash_e1780_4gb_792.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/TK1_JXD_S7800_ddr3_512Mx16x4_H5TC8G63AMR_PBA_792MHz_0415_x4.cfg:TK1_JXD_S7800_ddr3_512Mx16x4_H5TC8G63AMR_PBA_792MHz_0415_x4.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/TK1_JXD_S7800_Micron_2GB_MT41K256M16HA_ddr3_792MHz.cfg:TK1_JXD_S7800_Micron_2GB_MT41K256M16HA_ddr3_792MHz.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1780_Hynix_2GB_H5TC4G63AFR_RDA_924Mhz.cfg:flash_e1780_924.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1782_Hynix_4GB_H5TC8G63AMR_PBA_792Mhz.cfg:flash_e1782_4gb_792.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1782_Hynix_2GB_H5TC4G63AFR_RDA_924Mhz.cfg:flash_e1782_924.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1782_Hynix_4GB_H5TC8G63AMR_PBA_792Mhz_spi.cfg:flash_e1782_4gb_792_spi.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1782_Hynix_2GB_H5TC4G63AFR_RDA_924Mhz_spi.cfg:flash_e1782_924_spi.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1792_Elpida_2GB_EDFA164A2MA_JD_F_792MHz.cfg:flash_e1792_792.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1792_Elpida_2GB_EDFA164A2MA_JD_F_924MHz.cfg:flash_e1792_924.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1791_Elpida_4GB_edfa232a2ma_792MHz.cfg:flash_e1791_4gb_792.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1791_Elpida_4GB_edfa232a2ma_924MHz.cfg:flash_e1791_4gb_924.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1761_Hynix_4GB_H5TC4G63AFR_PBA_792Mhz.cfg:flash_e1761_4gb_792.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1761_Hynix_2GB_H5TC4G63AFR_PBA_792Mhz.cfg:flash_e1761_2gb_792.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1761_Hynix_2GB_H5TC4G63AFR_RDA_924MHz.cfg:flash_e1761_2gb_924.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1922_samsung_pop_3GB_K3QF6F60MM_924MHz.cfg:flash_e1922_3gb_924.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1922_Hynix_pop_2GB_H9CKNNNBKTMTDR-NUH_924MHz.cfg:flash_e1922_hynix_pop_2gb_924.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1923_samsung_pop_3GB_K3QF6F60MM_924MHz.cfg:flash_e1923_3gb_924.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/E1923_samsung_pop_2GB_K3QF6F60MM_924MHz.cfg:flash_e1923_2gb_924.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/eks_nokey.dat:eks.dat \
-    $(NVFLASH_FILES_PATH)/nvflash/NCT_ardbeg.txt:NCT_ardbeg.txt \
-    $(NVFLASH_FILES_PATH)/nvflash/nct_tn8.txt:nct_tn8.txt \
-    $(NVFLASH_FILES_PATH)/nvflash/nct_tn8-ffd.txt:nct_tn8-ffd.txt \
-    $(NVFLASH_FILES_PATH)/partition_data/config/nvcamera.conf:system/etc/nvcamera.conf \
-    $(NVFLASH_FILES_PATH)/nvflash/common_bct.cfg:bct.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/fuse_write.txt:fuse_write.txt \
-    $(NVFLASH_FILES_PATH)/nvflash/nvidia.bmp:nvidia.bmp \
-    $(NVFLASH_FILES_PATH)/nvflash/tn8_nvidia.bmp:tn8_nvidia.bmp \
-    $(NVFLASH_FILES_PATH)/nvflash/lowbat.bmp:lowbat.bmp \
-    $(NVFLASH_FILES_PATH)/nvflash/charging.bmp:charging.bmp \
-    $(NVFLASH_FILES_PATH)/nvflash/charged.bmp:charged.bmp \
-    $(NVFLASH_FILES_PATH)/nvflash/fullycharged.bmp:fullycharged.bmp \
-    $(NVFLASH_FILES_PATH)/nvflash/nvbdktest_plan.txt:nvbdktest_plan.txt \
-     device/nvidia/ardbeg/max1160x.kl:system/usr/keylayout/max1160x.kl  \
-     device/nvidia/ardbeg/aflash_micron.bat:aflash_2g_micron.bat	\
-     device/nvidia/ardbeg/aflash_hynix.bat:aflash_4g_hynix.bat	\
-     device/nvidia/ardbeg/nct.txt:nct.txt
-
-ifeq ($(APPEND_DTB_TO_KERNEL), true)
-PRODUCT_COPY_FILES += \
-    $(NVFLASH_FILES_PATH)/nvflash/android_fastboot_nvtboot_emmc_full.cfg:flash.cfg
-    $(NVFLASH_FILES_PATH)/nvflash/android_fastboot_nvtboot_spi_sata_full.cfg:flash_spi_sata.cfg
-else
-ifeq ($(BUILD_NV_CRASHCOUNTER),true)
-PRODUCT_COPY_FILES += \
-    $(NVFLASH_FILES_PATH)/nvflash/android_cc_fastboot_dtb_emmc_full.cfg:flash.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/android_cc_fastboot_nvtboot_dtb_spi_sata_full.cfg:flash_spi_sata.cfg
-else
-PRODUCT_COPY_FILES += \
-    $(NVFLASH_FILES_PATH)/nvflash/android_fastboot_nvtboot_nct_dtb_emmc_full.cfg:flash.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/android_fastboot_nvtboot_dtb_spi_sata_full.cfg:flash_spi_sata.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/android_fastboot_nvtboot_nct_dtb_emmc_full.cfg:flash_nct.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/laguna_android_fastboot_nvtboot_dtb_emmc_full.cfg:laguna_flash.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/tn8_android_fastboot_nvtboot_dtb_emmc_full.cfg:tn8_flash.cfg \
-    $(NVFLASH_FILES_PATH)/nvflash/tn8_android_fastboot_nvtboot_dtb_emmc_full_mfgtest.cfg:tn8diag_flash.cfg
-
-NVFLASH_CFG_BASE_FILE := $(NVFLASH_FILES_PATH)/nvflash/tn8_android_fastboot_nvtboot_dtb_emmc_full.cfg
-endif
-endif
-
-NVFLASH_FILES_PATH :=
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
@@ -115,16 +42,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
-
-ifneq (,$(filter $(BOARD_INCLUDES_TEGRA_JNI),display))
-PRODUCT_COPY_FILES += \
-    vendor/nvidia/tegra/hal/frameworks/Display/com.nvidia.display.xml:system/etc/permissions/com.nvidia.display.xml
-endif
-
-ifneq (,$(filter $(BOARD_INCLUDES_TEGRA_JNI),cursor))
-PRODUCT_COPY_FILES += \
-    vendor/nvidia/tegra/hal/frameworks/Graphics/com.nvidia.graphics.xml:system/etc/permissions/com.nvidia.graphics.xml
-endif
 
 PRODUCT_COPY_FILES += \
   $(LOCAL_PATH)/ueventd.ardbeg.rc:root/ueventd.ardbeg.rc \
@@ -188,10 +105,6 @@ ifeq ($(NO_ROOT_DEVICE),1)
     $(LOCAL_PATH)/init_no_root_device.rc:root/init.rc
 endif
 
-# Face detection model
-PRODUCT_COPY_FILES += \
-    vendor/nvidia/tegra/core/include/ft/model_frontalface.xml:system/etc/model_frontal.xml
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/../common/cluster:system/bin/cluster \
     $(LOCAL_PATH)/../common/cluster_get.sh:system/bin/cluster_get.sh \
@@ -204,23 +117,6 @@ PRODUCT_COPY_FILES += \
     device/nvidia/ardbeg/nvcms/device.cfg:system/lib/nvcms/device.cfg
 
 PRODUCT_COPY_FILES += \
-    external/alsa-lib/src/conf/alsa.conf:system/usr/share/alsa/alsa.conf \
-    external/alsa-lib/src/conf/pcm/dsnoop.conf:system/usr/share/alsa/pcm/dsnoop.conf \
-    external/alsa-lib/src/conf/pcm/modem.conf:system/usr/share/alsa/pcm/modem.conf \
-    external/alsa-lib/src/conf/pcm/dpl.conf:system/usr/share/alsa/pcm/dpl.conf \
-    external/alsa-lib/src/conf/pcm/default.conf:system/usr/share/alsa/pcm/default.conf \
-    external/alsa-lib/src/conf/pcm/surround51.conf:system/usr/share/alsa/pcm/surround51.conf \
-    external/alsa-lib/src/conf/pcm/surround41.conf:system/usr/share/alsa/pcm/surround41.conf \
-    external/alsa-lib/src/conf/pcm/surround50.conf:system/usr/share/alsa/pcm/surround50.conf \
-    external/alsa-lib/src/conf/pcm/dmix.conf:system/usr/share/alsa/pcm/dmix.conf \
-    external/alsa-lib/src/conf/pcm/center_lfe.conf:system/usr/share/alsa/pcm/center_lfe.conf \
-    external/alsa-lib/src/conf/pcm/surround40.conf:system/usr/share/alsa/pcm/surround40.conf \
-    external/alsa-lib/src/conf/pcm/side.conf:system/usr/share/alsa/pcm/side.conf \
-    external/alsa-lib/src/conf/pcm/iec958.conf:system/usr/share/alsa/pcm/iec958.conf \
-    external/alsa-lib/src/conf/pcm/rear.conf:system/usr/share/alsa/pcm/rear.conf \
-    external/alsa-lib/src/conf/pcm/surround71.conf:system/usr/share/alsa/pcm/surround71.conf \
-    external/alsa-lib/src/conf/pcm/front.conf:system/usr/share/alsa/pcm/front.conf \
-    external/alsa-lib/src/conf/cards/aliases.conf:system/usr/share/alsa/cards/aliases.conf \
     device/nvidia/common/bdaddr:system/etc/bluetooth/bdaddr \
     device/nvidia/ardbeg/asound.conf:system/etc/asound.conf \
     device/nvidia/ardbeg/nvaudio_conf.xml:system/etc/nvaudio_conf.xml \
@@ -230,19 +126,11 @@ PRODUCT_COPY_FILES += \
     hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/fw_bcm4329_apsta.bin:system/vendor/firmware/bcm4329/fw_bcmdhd_apsta.bin
 
 PRODUCT_COPY_FILES += \
-    device/nvidia/ardbeg/enctune.conf:system/etc/enctune.conf
+    device/nvidia/ardbeg/3rdparty/broadcom/gps/bin/bcm4752/glgps_nvidiaTegra2android:system/bin/glgps_nvidiaTegra2android \
+    device/nvidia/ardbeg/3rdparty/broadcom/gps/bin/bcm4752/gpslogd_nvidiaTegra2android:system/bin/gpslogd \
+    device/nvidia/ardbeg/3rdparty/broadcom/gps/bin/bcm4752/gps.tegra.so:system/lib/hw/gps.brcm.so
 
-PRODUCT_COPY_FILES += \
-    vendor/nvidia/tegra/3rdparty/broadcom/gps/bin/bcm4752/glgps_nvidiaTegra2android:system/bin/glgps_nvidiaTegra2android \
-    vendor/nvidia/tegra/3rdparty/broadcom/gps/bin/bcm4752/gpslogd_nvidiaTegra2android:system/bin/gpslogd \
-    vendor/nvidia/tegra/3rdparty/broadcom/gps/bin/bcm4752/gps.tegra.so:system/lib/hw/gps.brcm.so
-
-ifeq ($(wildcard vendor/nvidia/tegra/core-private),vendor/nvidia/tegra/core-private)
-    BCMBINARIES_PATH := vendor/nvidia/tegra/3rdparty/bcmbinaries
-else
-    BCMBINARIES_PATH := vendor/nvidia/tegra/prebuilt/ardbeg/3rdparty/bcmbinaries
-endif
-
+BCMBINARIES_PATH := device/nvidia/ardbeg/3rdparty/bcmbinaries
 PRODUCT_COPY_FILES += \
     $(BCMBINARIES_PATH)/bcm4329/bluetooth/bcmpatchram.hcd:system/etc/firmware/bcm4329.hcd \
     $(BCMBINARIES_PATH)/bcm4330/bluetooth/BCM4330B1_002.001.003.0379.0390.hcd:system/etc/firmware/bcm4330.hcd \
@@ -274,20 +162,9 @@ PRODUCT_COPY_FILES += \
     $(BCMBINARIES_PATH)/bcm4339a0/wlan/fw_bcm4339a0_ag_p2p.bin:system/vendor/firmware/bcm43241/fw_bcm4339a0_ag_p2p.bin \
     $(BCMBINARIES_PATH)/bcm4339a0/bluetooth/bcm4339a0.hcd:system/etc/firmware/bcm4339a0.hcd
 
-# Enable following APKs only for internal engineering build
-ifeq ($(wildcard vendor/nvidia/tegra/core-private),vendor/nvidia/tegra/core-private)
-PRODUCT_PACKAGES += \
-    NvwfdServiceTest
-endif
-
 # Nvidia Miracast
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/../common/miracast/com.nvidia.miracast.xml:system/etc/permissions/com.nvidia.miracast.xml
-
-# NvBlit JNI library
-PRODUCT_COPY_FILES += \
-    vendor/nvidia/tegra/graphics-partner/android/frameworks/Graphics/com.nvidia.graphics.xml:system/etc/permissions/com.nvidia.graphics.xml
-
 
 #enable Widevine drm
 PRODUCT_PROPERTY_OVERRIDES += drm.service.enabled=true
@@ -300,63 +177,36 @@ PRODUCT_PACKAGES += \
     libWVStreamControlAPI_L$(BOARD_WIDEVINE_OEMCRYPTO_LEVEL) \
     libwvdrm_L$(BOARD_WIDEVINE_OEMCRYPTO_LEVEL)
 
-#needed by google GMS lib:libpatts_engine_jni_api.so
-PRODUCT_PACKAGES += \
-    libwebrtc_audio_coding
 
 #Marvell firmware package
 PRODUCT_PACKAGES += sd8897_uapsta.bin \
     sd8797_uapsta.bin
 
-# Live Wallpapers
 PRODUCT_PACKAGES += \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    HoloSpiralWallpaper \
-    MagicSmokeWallpapers \
-    NoiseField \
-    Galaxy4 \
-    VisualizationWallpapers \
-    PhaseBeam \
-    librs_jni
-
-PRODUCT_PACKAGES += \
-    sensors.tegra \
-    lights.tegra \
+    android.hardware.sensors@1.0-impl \
     audio.primary.tegra \
     audio.a2dp.default \
     audio.usb.default \
-    audio_policy.tegra \
-    power.tegra \
+    audio.r_submix.default \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    libaudio-resampler \
+    libaudiospdif \
+    libtinyalsa \
+    libtinycompress \
+    tinycap \
+    tinymix \
+    tinyplay \
+    xaplay \
+    libstagefrighthw \
+    enctune.conf \
     setup_fs \
     drmserver \
-    Gallery2 \
     libdrmframework_jni \
     overlaymon \
     e2fsck
 
-PRODUCT_PACKAGES += \
-    tos.img
-PRODUCT_PACKAGES += \
-    GameMap \
-    KeyMaster \
-    JXDServer \
-	GameNews \
-	GameReview \
-	RKUpdateService \
-	TestApp \
-	GameNews
-
 #MTK GPS
-
-
-#Application for collection of end user feedback
-PRODUCT_PACKAGES += \
-    nvidiafeedback
-
-#TegraOTA
-#PRODUCT_PACKAGES += \
-#    TegraOTA
 
 PRODUCT_PACKAGES += \
     lbh_images
