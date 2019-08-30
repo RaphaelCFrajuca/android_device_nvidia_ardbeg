@@ -29,7 +29,7 @@ PRODUCT_MODEL := s192
 PRODUCT_MANUFACTURER := jxd
 PRODUCT_BRAND := jxd
 
-include vendor/google/products/gms.mk
+#include vendor/google/products/gms.mk
 
 ## The base dtb file name used for this product
 TARGET_KERNEL_DT_NAME := tegra124-ardbeg
