@@ -95,7 +95,7 @@ endif
 # BOARD_DISABLE_TRIPLE_BUFFERED_DISPLAY_SURFACES := true
 
 BOARD_ROOT_DEVICE := emmc
-include device/nvidia/common/BoardConfig.mk
+include device/nvidia/common/BoardConfigCommon.mk
 
 # Use CMU-style config with Nvcms
 NVCMS_CMU_USE_CONFIG := true

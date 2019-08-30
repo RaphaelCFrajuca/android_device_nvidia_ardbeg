@@ -1,3 +1,3 @@
-add_lunch_combo ardbeg-user
-add_lunch_combo ardbeg-userdebug
-add_lunch_combo ardbeg-eng
+add_lunch_combo lineage_ardbeg-user
+add_lunch_combo lineage_ardbeg-userdebug
+add_lunch_combo lineage_ardbeg-eng
