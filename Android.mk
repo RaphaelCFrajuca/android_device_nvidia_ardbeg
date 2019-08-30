@@ -12,21 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq ($(REFERENCE_DEVICE),ardbeg)
-LOCAL_PATH := $(my-dir)
-subdir_makefiles := \
-	$(LOCAL_PATH)/liblights/Android.mk \
-	$(LOCAL_PATH)/power/Android.mk \
-	$(LOCAL_PATH)/sensors/Android.mk
+LOCAL_PATH := $(call my-dir)
 
-ifeq ($(BOARD_HAVE_LBH_SUPPORT), true)
-LBH_MAKEFILE := $(TOP)/vendor/nvidia/fury/tools/lbh/AndroidLBH.mk
-ifeq ($(wildcard $(LBH_MAKEFILE)),$(LBH_MAKEFILE))
-FURY_CODE_NAME := tn8
-subdir_makefiles += \
-        $(LBH_MAKEFILE)
-endif
-endif
+ifeq ($(TARGET_DEVICE), ardbeg)
 
-include $(subdir_makefiles)
+include $(call all-makefiles-under,$(LOCAL_PATH))
+
 endif
