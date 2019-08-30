@@ -9,3 +9,7 @@ PRODUCT_MAKEFILES := \
   $(LOCAL_DIR)/wx_un_do.mk \
   $(LOCAL_DIR)/wx_zh_mo.mk \
   $(LOCAL_DIR)/wx_diag.mk
+
+LOCAL_PATH := device/nvidia/ardbeg/
+
+PRODUCT_MAKEFILES := $(LOCAL_PATH)/ardbeg.mk

@@ -5,12 +5,10 @@
 # AndroidProducts.mk is included before BoardConfig.mk, variable essential at
 # start of build and used in here should always be intialized in this file
 
-LOCAL_PATH := device/nvidia/ardbeg
-
 ## All essential packages
 $(call inherit-product, vendor/lineage/config/common_mini_tablet_wifionly.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, $(LOCAL_PATH)/device.mk)
+$(call inherit-product, device/nvidia/ardbeg/device.mk)
 
 ## NV_TN_SKU
 NV_TN_SKU := ardbeg
