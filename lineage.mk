@@ -1,5 +1,5 @@
 # Inherit device configuration for shieldtablet.
-$(call inherit-product, device/nvidia/shieldtablet/full_shieldtablet.mk)
+$(call inherit-product, device/nvidia/shieldtablet/full_ardbeg.mk)
 
 # Inherit some common lineage stuff.
 ifeq ($(ALTERNATE_BUILD),true)
@@ -8,5 +8,5 @@ else
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 endif
 
-PRODUCT_NAME := lineage_shieldtablet
-PRODUCT_DEVICE := shieldtablet
+PRODUCT_NAME := lineage_ardbeg
+PRODUCT_DEVICE := ardbeg
