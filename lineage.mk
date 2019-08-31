@@ -1,5 +1,5 @@
 # Inherit device configuration for shieldtablet.
-$(call inherit-product, device/nvidia/shieldtablet/full_ardbeg.mk)
+$(call inherit-product, device/nvidia/ardbeg/full_ardbeg.mk)
 
 # Inherit some common lineage stuff.
 ifeq ($(ALTERNATE_BUILD),true)
