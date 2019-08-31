@@ -1,6 +1,6 @@
 #
-# Copyright (C) 2012 The CyanogenMod Project
-
+# Copyright (C) 2015 The CyanogenMod Project
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -14,6 +14,16 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_shieldtablet.mk \
-    $(LOCAL_DIR)/lineage.mk
+LOCAL_PATH := $(call my-dir)
+
+ifeq ($(TARGET_DEVICE),shieldtablet)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE_TAGS := optional
+LOCAL_C_INCLUDES := device/nvidia/shield-common/init
+LOCAL_SRC_FILES := init_tn8.cpp
+LOCAL_MODULE := libinit_tn8
+include $(BUILD_STATIC_LIBRARY)
+
+endif 

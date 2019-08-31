@@ -15,8 +15,6 @@
 
 LOCAL_PATH:= $(call my-dir)
 
-ifneq ($(TARGET_SIMULATOR),true)
-
 # HAL module implemenation, not prelinked and stored in
 # hw/<COPYPIX_HARDWARE_MODULE_ID>.<ro.board.platform>.so
 include $(CLEAR_VARS)
@@ -25,13 +23,10 @@ LOCAL_SRC_FILES := lights.c
 
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 
-LOCAL_MODULE_TAGS := optional
-
 LOCAL_SHARED_LIBRARIES := liblog
 
-LOCAL_MODULE := lights.tegra
-LOCAL_NVIDIA_NO_WARNINGS_AS_ERRORS := 1
+LOCAL_MODULE := lights.$(TARGET_BOARD_PLATFORM)
+
+LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)
-
-endif # !TARGET_SIMULATOR
