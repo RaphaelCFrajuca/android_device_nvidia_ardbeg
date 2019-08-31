@@ -28,7 +28,7 @@ else
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 endif
 # Inherit from shieldtablet device
-$(call inherit-product, device/nvidia/shieldtablet/device.mk)
+$(call inherit-product, device/nvidia/ardbeg/device.mk)
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := full_ardbeg
