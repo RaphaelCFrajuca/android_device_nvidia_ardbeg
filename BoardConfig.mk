@@ -42,6 +42,8 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1342177280
 BOARD_FLASH_BLOCK_SIZE := 4096
 
+
+
 USE_E2FSPROGS := true
 USE_OPENGL_RENDERER := true
 
@@ -129,3 +131,15 @@ BOARD_SEPOLICY_UNION := healthd.te \
     netd.te \
     untrusted_app.te \
     vold.te
+
+
+# Recovery
+TW_THEME := portrait_hdpi
+BOARD_HAS_FLIPPED_SCREEN := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_BRIGHTNESS_PATH := /sys/class/backlight/pwm-backlight/brightness
+TW_MAX_BRIGHTNESS := 255
+TW_USE_TOOLBOX := true
+TW_EXCLUDE_SUPERSU := true
+RECOVERY_SDCARD_ON_DATA := true
+TW_DEVICE_VERSION := raphaelcfrajuca

@@ -211,14 +211,54 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lbh_images
 
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
+
 # HDCP SRM Support
 PRODUCT_PACKAGES += \
     hdcp1x.srm \
     hdcp2x.srm \
     hdcp2xtest.srm
 
-# camera2 sanity tests for HAL V3; Only for T124+ products
-PRODUCT_PACKAGES += camera2_test
+# Camera
+PRODUCT_PACKAGES += Snap
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/camera/nvcamera.conf:system/etc/nvcamera.conf
+
+PRODUCT_PACKAGES += \
+    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl
+
+# Wifi
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/comms/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
+
+
+# Light
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-impl \
+    lights.tegra
+
+# Thermal
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/thermal/thermalhal.tn8.xml:$(TARGET_COPY_OUT_VENDOR)/etc/thermalhal.tn8.xml
+
+# Charger
+PRODUCT_PACKAGES += \
+    charger \
+    charger_res_images
+
+# Radio Interface
+PRODUCT_PACKAGES += rild
+
+# HIDL
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
+
+# Shims
+PRODUCT_PACKAGES += libs \
+                    libcutils_shim \
+                    libshim_zw
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
