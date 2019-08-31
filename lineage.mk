@@ -1,4 +1,4 @@
-# Inherit device configuration for shieldtablet.
+# Inherit device configuration for ardbeg.
 $(call inherit-product, device/nvidia/ardbeg/full_ardbeg.mk)
 
 # Inherit some common lineage stuff.
