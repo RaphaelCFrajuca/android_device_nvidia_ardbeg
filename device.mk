@@ -170,3 +170,21 @@ PRODUCT_PACKAGES += \
     libdrmdecrypt \
     libWVStreamControlAPI_L$(BOARD_WIDEVINE_OEMCRYPTO_LEVEL) \
     libwvdrm_L$(BOARD_WIDEVINE_OEMCRYPTO_LEVEL)
+
+# Init and fstab files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/initfiles/power.ardbeg.rc:system/etc/power.ardbeg.rc \
+    $(LOCAL_PATH)/initfiles/power.tn8.rc:system/etc/power.tn8.rc \
+    $(LOCAL_PATH)/initfiles/init.t124.rc:root/init.t124.rc \
+    $(LOCAL_PATH)/initfiles/init.t124_sata.rc:root/init.t124_sata.rc \
+    $(LOCAL_PATH)/initfiles/init.t124_emmc.rc:root/init.t124_emmc.rc \
+    $(LOCAL_PATH)/initfiles/init.ardbeg.rc:root/init.ardbeg.rc \
+    $(LOCAL_PATH)/initfiles/init.laguna.rc:root/init.laguna.rc \
+    $(LOCAL_PATH)/initfiles/init.norrin.rc:root/init.norrin.rc \
+    $(LOCAL_PATH)/initfiles/init.tn8.rc:root/init.tn8.rc \
+    $(LOCAL_PATH)/initfiles/init.ardbeg_sata.rc:root/init.ardbeg_sata.rc \
+    $(LOCAL_PATH)/initfiles/fstab.ardbeg:root/fstab.ardbeg \
+    $(LOCAL_PATH)/initfiles/fstab.tn8:root/fstab.tn8 \
+    $(LOCAL_PATH)/initfiles/fstab.laguna:root/fstab.laguna \
+    $(LOCAL_PATH)/initfiles/fstab.norrin:root/fstab.norrin \
+    $(LOCAL_PATH)/initfiles/fstab.ardbeg_sata:root/fstab.ardbeg_sata 

@@ -94,8 +94,8 @@ BOARD_HARDWARE_CLASS := device/nvidia/ardbeg/lineagehw/
 BOARD_SEPOLICY_DIRS += device/nvidia/ardbeg/sepolicy
 
 # Vendor Init
-TARGET_INIT_VENDOR_LIB := libinit_shield libinit_tn8
-TARGET_LIBINIT_DEFINES_FILE := device/nvidia/ardbeg/init/init_tn8.cpp
+#TARGET_INIT_VENDOR_LIB := libinit_shield libinit_tn8
+#TARGET_LIBINIT_DEFINES_FILE := device/nvidia/ardbeg/init/init_tn8.cpp
 
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
