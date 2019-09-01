@@ -109,6 +109,9 @@ ZYGOTE_WHITELIST_PATH_EXTRA := \"/dev/nvhost-ctrl\",
 # Override common releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/nvidia/ardbeg/releasetools
 
+# Build with TWRP support
+WITH_TWRP := true
+
 # TWRP Support
 ifeq ($(WITH_TWRP),true)
 -include device/nvidia/ardbeg/twrp/twrp.mk
