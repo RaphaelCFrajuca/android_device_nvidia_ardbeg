@@ -15,5 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_shieldtablet.mk \
+    $(LOCAL_DIR)/full_ardbeg.mk \
     $(LOCAL_DIR)/lineage.mk
