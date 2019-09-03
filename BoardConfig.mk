@@ -59,7 +59,7 @@ BCM_BLUETOOTH_MANTA_BUG := true
 
 # Graphics
 USE_OPENGL_RENDERER := true
-BOARD_DISABLE_TRIPLE_BUFFERED_DISPLAY_SURFACES := true
+#BOARD_DISABLE_TRIPLE_BUFFERED_DISPLAY_SURFACES := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
@@ -69,7 +69,7 @@ MAX_EGL_CACHE_SIZE := 4194304
 MAX_EGL_CACHE_ENTRY_SIZE := 262144
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/nvidia/ardbeg/initfiles/fstab.tn8
+TARGET_RECOVERY_FSTAB := device/nvidia/ardbeg/initfiles/fstab.ardbeg
 
 # RenderScript
 OVERRIDE_RS_DRIVER := libnvRSDriver.so
@@ -111,6 +111,15 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/nvidia/ardbeg/releasetools
 
 # Build with TWRP support
 WITH_TWRP := true
+
+# powerhal
+BOARD_USES_POWERHAL := true
+
+# Using the NCT partition
+TARGET_USE_NCT := true
+# LBH related defines
+# use LBH partition and resources in it
+BOARD_HAVE_LBH_SUPPORT := true
 
 # TWRP Support
 ifeq ($(WITH_TWRP),true)
